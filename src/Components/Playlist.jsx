@@ -32,13 +32,7 @@ export default function Playlist() {
   return (
     <div>
         <ul>
-            {
-                playlists.map(({name,id}) => {
-                    return(
-                        <li key = {id}>{name}</li>
-                    )
-                })
-            }
+            { playlists.map(({name,id}) => <li key = {id}>{name}</li>) }
         </ul>
     </div>
   )
