@@ -24,7 +24,6 @@ export default function Playlist() {
                 return{name,id};
             });
             dispatch( {type: reducerCases.SET_PLAYLISTS, playlists} );
-            console.log(playlists);
         };
         getPlaylistData();
     },[token,dispatch])
