@@ -25,5 +25,22 @@ export default function Spotify() {
 }
 
 const Container = styled.div`
-
+max-width: 100vw;
+maxheight: 100vh;
+overflow: hidden;
+display: grid;
+grid-template-rows: 85vh 15vh;
+.spotify_body {
+    display: grid;
+    grid-template-columns: 19vw 15vw;
+    height: 100%;
+    width:100%;
+    background: linear-gradient(transparent,rgba(0,0,1));
+    background-color: rgba(32,87,100);
+    .body{
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
+}
 `;
