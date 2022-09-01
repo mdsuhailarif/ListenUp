@@ -24,8 +24,11 @@ export default function Sidebar() {
                         <IoLibrary />
                         <span>Your Library</span>
                     </li>
-                    <li>
-                        <span><Playlist/></span>
+                    <li >
+                    <span>Your Playlists</span>
+                    </li>
+                    <li >
+                    <span><Playlist/></span>
                     </li>
                 </ul>
             </div>
@@ -43,6 +46,7 @@ width: 100%;
 .top_links {
     diplay: flex;
     flex-direction: column;
+    overflow: hidden;
     .logo{
         text-align: center;
         margin: 1rem 0;
@@ -57,6 +61,7 @@ width: 100%;
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
+        max-height: 100%;
         li{
             diplay: flex;
             gap: 1rem;
@@ -65,7 +70,18 @@ width: 100%;
             &:hover{
                 color:white;
             }
+            ul{
+                overflow: auto;
+                height:50vh;
+                &::-webkit-scrollbar{
+                    width: 0.7rem;
+                    &-thumb {
+                        background-color:rgba(255,255,255,0.6);
+                    }
+                }
+            }
         }
+        
     }
 }
 `;

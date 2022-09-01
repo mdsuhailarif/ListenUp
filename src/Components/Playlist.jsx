@@ -25,14 +25,15 @@ export default function Playlist() {
             });
             dispatch( {type: reducerCases.SET_PLAYLISTS, playlists} );
         };
-        getPlaylistData();
     },[token,dispatch])
 
   return (
     <div>
         <ul>
             { playlists.map(({name,id}) => <li key = {id}>{name}</li>) }
+         
         </ul>
+        
     </div>
   )
 }
