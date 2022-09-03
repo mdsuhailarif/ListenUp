@@ -15,14 +15,13 @@ export default function Navbar() {
             <input type="text" placeholder='Artists, Songs, or podcasts'/>
         </div>
         <div className="avatar">
-            <a href="#">
+            <a href="/">
                 <CgProfile/>
                 <span>{userInfo?.userName}</span>
             </a>
         </div>
     </Container>
   )
-  console.log(userInfo);
 }
 
 const Container = styled.div`
@@ -77,6 +76,4 @@ background-color: none;
         }
     }
 }
-
-
 `;

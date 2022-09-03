@@ -61,7 +61,7 @@ display: grid;
 grid-template-rows: 85vh 15vh;
 .spotify_body {
     display: grid;
-    grid-template-columns: 19vw 81%;
+    grid-template-columns: 19vw 81vw;
     height: 100%;
     width:100%;
     background: linear-gradient(transparent,rgba(0,0,1));
