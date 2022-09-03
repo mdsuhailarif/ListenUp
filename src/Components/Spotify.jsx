@@ -31,6 +31,7 @@ export default function Spotify() {
             };
             dispatch( {type: reducerCases.SET_USERINFO, userInfo} );
         };
+        getUserInfo();
     },[token,dispatch])
     
 
@@ -60,7 +61,7 @@ display: grid;
 grid-template-rows: 85vh 15vh;
 .spotify_body {
     display: grid;
-    grid-template-columns: 19vw 15vw;
+    grid-template-columns: 19vw 81%;
     height: 100%;
     width:100%;
     background: linear-gradient(transparent,rgba(0,0,1));
