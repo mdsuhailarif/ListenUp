@@ -6,7 +6,7 @@ import { useStateProvider } from '../Utils/StateProvider';
 import { reducerCases } from '../Utils/Constants';
 
 
-export default function Body() {
+export default function Body({ headerBg }) {
 
     const [{ token, selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider();
     useEffect(() => {
@@ -42,9 +42,14 @@ export default function Body() {
         getInitialPlaylist();
     }, [token, dispatch])
 
+    const mstoMinAndSec = (ms) => {
+        const min = Math.floor(ms / 60000);
+        const sec = Math.floor((ms % 60000) / 1000).toFixed(0);
+        return (min + ":" + sec);
+    }
 
     return (
-        <Container>
+        <Container headerBg={headerBg}>
             {
                 selectedPlaylist && (
                     <>
@@ -96,14 +101,22 @@ export default function Body() {
                                                     <img src={image} alt="{name}" />
                                                     <div className="info" >
                                                         <span className="name" >{name}</span>
-                                                        <span> {artists} </span>
+                                                        <div className="artist">
+                                                            {artists.map((artist, index) => {
+                                                                return (
+                                                                    index == 0 ?
+                                                                        <span key={index}>{artist}</span> :
+                                                                        <span key={index}>, {artist}</span>
+                                                                )
+                                                            })}
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="col">
                                                     <span>{album}</span>
                                                 </div>
                                                 <div className="col">
-                                                    <span>{duration}</span>
+                                                    <span>{mstoMinAndSec(duration)}</span>
                                                 </div>
                                             </div>
                                         )
@@ -126,18 +139,25 @@ const Container = styled.div`
     gap:1rem;
     .image{
         img{
-            height: 15rem;
+            margin-top: -0.5rem;
+            height: 12rem;
             box-shadow: rgba(0,0,0,0.25) 0px 25px 50px 12px;
         }
     }
     .details{
         diplay: flex;
         flex-direction: column;
-        gap: 1rem;
+        justify-content: flex-end;
         color: #e0dede;
+        .type{
+            font-size: 0.7rem;
+        }
         .title{
             color: white;
             font-size: 4rem;
+        }
+        .description{
+            color: #b3b3b3;
         }
     }
 }
@@ -146,45 +166,63 @@ const Container = styled.div`
         display: grid;
         grid-template-columns:0.3fr 3fr 2.1fr 0.5fr;
         gap:1rem;
-        color: #dddcdc;
+        color: #b3b3b3;
         margin: 1rem 0 0 0;
         position: sticky;
         top: 15vh;
         padding: 1rem 3rem;
         transition: 0.3s ease-in-out;
+        border-bottom: 1px solid hsla(0,0%,100%,.1);
+        background-color: ${({ headerBg }) => headerBg ? "rgba(0,0,0,0.97)" : "none"};
     }
+    
     .tracks{
-        margin: 0 2rem;
+        margin: 0.5rem 2rem;
         display: flex;
         flex-direction: column;
         margin-bottom: 5rem;
         .row{
             padding: 0.5rem 1rem;
             display:grid;
-            grid-template-columns:0.3fr 3fr 2.2fr 0.5fr;
+            grid-template-columns:0.3fr 3fr 2.1fr 0.5fr;
             gap:1rem;
+            color: #b3b3b3;
             &:hover{
                 background-color: rgba(0,0,0,0.7);
+                color: #dddcdc;
             }
             .col{
-                
                 display:flex;
                 align-items:center;
-                color: #dddcdc;
-                white-space: nowrap;
+                white-space:nowrap;
                 overflow: hidden;
-                
+                text-overflow: ellipsis;
+                cursor: pointer;
                 img{
                     height:40px;
                 }
+            }
+            .detail{
+                display: flex;
+                gap: 1rem;
+                
                 .info{
                     display:flex;
                     flex-direction: column;
-                    gap:0.3rem;
-                    span
-                    {
-                        display: block;
-                        text-overflow: ellipsis;}
+                    gap:0.5rem;
+                    
+                    .name{
+                        color: #dddcdc;
+                        &:hover{
+                            text-decoration: underline;
+                            }
+                    }
+                    .artist{
+                        font-size: 0.8rem;
+                        &:hover{
+                            text-decoration: underline;
+                            }
+                    }
                 }
             }
         }

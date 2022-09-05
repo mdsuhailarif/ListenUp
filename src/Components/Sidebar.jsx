@@ -14,21 +14,18 @@ export default function Sidebar() {
                 <ul>
                     <li>
                         <MdHomeFilled />
-                        <span>Home</span>
+                        <span> Home</span>
                     </li>
                     <li>
                         <MdSearch />
-                        <span>Search</span>
+                        <span> Search</span>
                     </li>
                     <li>
                         <IoLibrary />
-                        <span>Your Library</span>
+                        <span> Your Playlists</span>
                     </li>
                     <li >
-                    <span>Your Playlists</span>
-                    </li>
-                    <li >
-                    <span><Playlist/></span>
+                        <span><Playlist /></span>
                     </li>
                 </ul>
             </div>
@@ -37,12 +34,14 @@ export default function Sidebar() {
 }
 
 const Container = styled.div`
+align-item: center;
+justify-content: center;
 background-color: black;
 color: #b3b3b3;
 display: flex;
 flex-direction: column;
 height: 100%;
-width: 100%;
+width: 100% ;
 .top_links {
     diplay: flex;
     flex-direction: column;
@@ -63,6 +62,7 @@ width: 100%;
         padding: 1rem;
         max-height: 100%;
         li{
+            padding: 0 0.3rem;
             diplay: flex;
             gap: 1rem;
             cursor: pointer;
