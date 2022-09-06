@@ -34,7 +34,8 @@ export default function Body({ headerBg }) {
                     duration: track.duration_ms,
                     album: track.album.name,
                     context_uri: track.album.uri,
-                    track_number: track.track_number
+                    track_number: track.track_number,
+                    preview_url: track.preview_url
                 }))
             };
             dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist });
@@ -44,9 +45,10 @@ export default function Body({ headerBg }) {
 
     const mstoMinAndSec = (ms) => {
         const min = Math.floor(ms / 60000);
-        const sec = Math.floor((ms % 60000) / 1000).toFixed(0);
-        return (min + ":" + sec);
+        const sec = Math.floor((ms % 60000) / 1000).toFixed(0) ;
+        return (min + ":" + (sec<10?"0"+sec:sec));
     }
+
 
     return (
         <Container headerBg={headerBg}>
@@ -93,7 +95,7 @@ export default function Body({ headerBg }) {
                                         track_number
                                     }, index) => {
                                         return (
-                                            <div className="row" key={id}>
+                                            <div className="row" key={id} >
                                                 <div className="col">
                                                     <span>{index + 1}</span>
                                                 </div>
@@ -101,15 +103,7 @@ export default function Body({ headerBg }) {
                                                     <img src={image} alt="{name}" />
                                                     <div className="info" >
                                                         <span className="name" >{name}</span>
-                                                        <div className="artist">
-                                                            {artists.map((artist, index) => {
-                                                                return (
-                                                                    index == 0 ?
-                                                                        <span key={index}>{artist}</span> :
-                                                                        <span key={index}>, {artist}</span>
-                                                                )
-                                                            })}
-                                                        </div>
+                                                        <div className="artist">{artists.join(", ")}</div>
                                                     </div>
                                                 </div>
                                                 <div className="col">

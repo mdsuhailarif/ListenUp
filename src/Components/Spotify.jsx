@@ -6,7 +6,6 @@ import Sidebar from './Sidebar';
 import Footer from './footer';
 import { useStateProvider } from '../Utils/StateProvider';
 import { reducerCases } from '../Utils/Constants';
-
 import axios from 'axios';
 
 

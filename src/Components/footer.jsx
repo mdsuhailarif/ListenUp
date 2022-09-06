@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import CurrentTrack from './CurrentTrack';
+import PlayerControl from './PlayerControl';
+import VolumeControl from './VolumeControl';
 
 export default function Footer() {
   return (
     <Container>
-      <div>footer</div>
-      <div>footer</div>
-      <div>footer</div>
+      <div><CurrentTrack/></div>
+      <div><PlayerControl/></div>
+      <div><VolumeControl/></div>
     </Container>
   )
 }
