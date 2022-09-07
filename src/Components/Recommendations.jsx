@@ -32,7 +32,6 @@ export default function Recommendations() {
                     images: track.album.images[0].url
                 })
             );
-            console.log(recomm);
             dispatch({ type: reducerCases.SET_RECCOM, recomm });
             
         };
@@ -41,18 +40,17 @@ export default function Recommendations() {
     }, [token, dispatch])
 
     
-    
     return (
         <Container>
             <span>Recommendations</span>
             <ul>
                 {
-                    recomm.map(({ name, images,artists },id) =>
+                    recomm&&(recomm.map(({ name, images,artists },id) =>
                     <li key={id} >
                         <img src={images} alt="playlist" />
                         <span className='name'>{name}</span>
                         <span className='artists'>{artists.join(", ")}</span>
-                    </li>)
+                    </li>))
                 }
             </ul>
         </Container>

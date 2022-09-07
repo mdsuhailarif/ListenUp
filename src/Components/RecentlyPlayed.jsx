@@ -46,12 +46,12 @@ export default function RecentlyPlayed() {
             <span>Recently Played</span>
             <ul>
                 {
-                    recent.map(({ name, images,artists },id) =>
+                    recent&&(recent.map(({ name, images,artists },id) =>
                         <li key={id} >
                             <img src={images} alt="playlist" />
                             <span className='name'>{name}</span>
                             <span className='artists'>{artists.join(", ")}</span>
-                        </li>)
+                        </li>))
                 }
             </ul>
         </Container>
