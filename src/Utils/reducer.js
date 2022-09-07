@@ -53,6 +53,16 @@ const reducer = (state, action) => {
                 ...state, alerts: action.alerts
             };
         }
+        case reducerCases.SET_RECENT: {
+            return {
+                ...state, recent: action.recent
+            };
+        }
+        case reducerCases.SET_RECCOM: {
+            return {
+                ...state, recomm: action.recomm
+            };
+        }
         default:
             return state;
     }

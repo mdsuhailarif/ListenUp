@@ -8,11 +8,12 @@ import { reducerCases } from '../Utils/Constants';
 
 export default function Body({ headerBg }) {
 
-    const [{ token, selectedPlaylist,selectedPlaylistId }, dispatch] = useStateProvider();
+    const [{ token, selectedPlaylist,selectedPlaylistId}, dispatch] = useStateProvider();
     useEffect(() => {
         const getInitialPlaylist = async () => {
+            const id=selectedPlaylistId;
             const response = await axios.get(
-                `https://api.spotify.com/v1/playlists/${selectedPlaylistId}`,
+                `https://api.spotify.com/v1/playlists/${id}`,
                 {
                     headers: {
                         Authorization: "Bearer " + token,
@@ -43,7 +44,7 @@ export default function Body({ headerBg }) {
             dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist });
         };
         getInitialPlaylist();
-    }, [token, dispatch])
+    }, [token,selectedPlaylistId, dispatch])
 
     const mstoMinAndSec = (ms) => {
         const min = Math.floor(ms / 60000);
@@ -148,6 +149,8 @@ const Container = styled.div`
         img{
             margin-top: -0.5rem;
             height: 12rem;
+            width: 12rem;
+            object-fit: cover;
             box-shadow: rgba(0,0,0,0.25) 0px 25px 50px 12px;
         }
     }

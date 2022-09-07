@@ -8,6 +8,8 @@ import { useStateProvider } from '../Utils/StateProvider';
 import { reducerCases } from '../Utils/Constants';
 import axios from 'axios';
 import Alertbox from './Alertbox';
+import {Routes,Route} from 'react-router-dom';
+import Home from './Home';
 
 
 export default function Spotify() {
@@ -53,7 +55,11 @@ export default function Spotify() {
                 <div className="body" ref={bodyRef} onScroll={bodyScrolled}>
                     <Navbar navBg={navBg} />
                     <div className="body_contents">
-                        <Body headerBg={headerBg} />
+                        
+                        <Routes>
+                            <Route path='/body' element={<Body headerBg={headerBg} />}/>
+                            <Route path='/' element={<Home/>}/>
+                        </Routes>
                     </div>
                 </div>
             </div>
@@ -88,12 +94,14 @@ grid-template-rows: 85vh 15vh;
         width: 100%;
         overflow: auto;
         &::-webkit-scrollbar{
-            
             width: 0.7rem;
             &-thumb {
                         background-color:rgba(255,255,255,0.2);
                     }
         }
+        ::-webkit-scrollbar-track {
+            margin-right:1rem;
+          }
     }
 }
 `;

@@ -6,7 +6,7 @@ export default function Login() {
 
     const handleClick = () => {
     const clientId = "5fc20efb01544c46bd202e4bfd1dacb3";
-    const redirectUrl = "https://listenup.on.fleek.co/";
+    const redirectUrl = "http://localhost:3000/";
     const apiUrl = "https://accounts.spotify.com/authorize";
     const scope = [ 'user-read-email',
                     'user-read-private',

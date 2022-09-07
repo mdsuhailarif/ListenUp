@@ -20,8 +20,8 @@ export default function Playlist() {
                 }
             );
             const { items } = response.data;
-            const playlists = items.map(({ name, id }) => {
-                return { name, id };
+            const playlists = items.map(({ name, id, images }) => {
+                return { name, id, images };
             });
             dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
         };
