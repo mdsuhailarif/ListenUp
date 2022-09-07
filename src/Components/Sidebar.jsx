@@ -24,9 +24,7 @@ export default function Sidebar() {
                         <IoLibrary />
                         <span> Your Playlists</span>
                     </li>
-                    <li >
-                        <span><Playlist /></span>
-                    </li>
+                    <Playlist />
                 </ul>
             </div>
         </Container>
@@ -70,18 +68,7 @@ width: 100% ;
             &:hover{
                 color:white;
             }
-            ul{
-                overflow: auto;
-                height:50vh;
-                &::-webkit-scrollbar{
-                    width: 0.7rem;
-                    &-thumb {
-                        background-color:rgba(255,255,255,0.6);
-                    }
-                }
-            }
-        }
-        
+        }  
     }
 }
 `;

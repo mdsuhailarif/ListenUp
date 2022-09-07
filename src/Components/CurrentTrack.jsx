@@ -22,11 +22,12 @@ export default function CurrentTrack() {
             if (response.data !== "") {
                 const { item } = response.data;
                 const currentPlaying = {
+                    index: -1,
                     id: item.id,
                     name: item.name,
                     artists: item.artists.map((artist) => artist.name),
                     image: item.album.images[2].url,
-                    preview_url: item.preview_url
+                    preview_url: item.preview_url?item.preview_url:null
                 };
                 dispatch({ type: reducerCases.SET_PLAYLING, currentPlaying });
             }
@@ -34,7 +35,7 @@ export default function CurrentTrack() {
         getcurrentTrack();
     }, [token, dispatch])
 
-
+    
     return (
         <Container>
             {
@@ -57,6 +58,7 @@ export default function CurrentTrack() {
 
 const Container = styled.div`
 .track{
+    width:22vw;
     display: flex;
     align-items: center;
     gap:1rem;
@@ -64,11 +66,14 @@ const Container = styled.div`
             display:flex;
             flex-direction: column;
             gap:0.5rem;
-            
+            overflow:hidden;
             .name{
+                white-space:nowrap;
                 color: #dddcdc;
             }
             .artist{
+                disply:block;
+                white-space:nowrap;
                 color:#b3b3b3;
                 font-size: 0.8rem;
             }

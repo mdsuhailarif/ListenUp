@@ -7,6 +7,7 @@ import Footer from './footer';
 import { useStateProvider } from '../Utils/StateProvider';
 import { reducerCases } from '../Utils/Constants';
 import axios from 'axios';
+import Alertbox from './Alertbox';
 
 
 export default function Spotify() {
@@ -46,6 +47,7 @@ export default function Spotify() {
 
     return (
         <Container>
+            <Alertbox/>
             <div className='spotify_body'>
                 <Sidebar/>
                 <div className="body" ref={bodyRef} onScroll={bodyScrolled}>

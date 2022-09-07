@@ -8,7 +8,7 @@ import { reducerCases } from '../Utils/Constants';
 
 export default function Body({ headerBg }) {
 
-    const [{ token, selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider();
+    const [{ token, selectedPlaylist,selectedPlaylistId }, dispatch] = useStateProvider();
     useEffect(() => {
         const getInitialPlaylist = async () => {
             const response = await axios.get(
@@ -20,6 +20,8 @@ export default function Body({ headerBg }) {
                     }
                 }
             );
+
+
             const selectedPlaylist = {
                 id: response.data.id,
                 name: response.data.name,
@@ -45,10 +47,22 @@ export default function Body({ headerBg }) {
 
     const mstoMinAndSec = (ms) => {
         const min = Math.floor(ms / 60000);
-        const sec = Math.floor((ms % 60000) / 1000).toFixed(0) ;
-        return (min + ":" + (sec<10?"0"+sec:sec));
+        const sec = Math.floor((ms % 60000) / 1000).toFixed(0);
+        return (min + ":" + (sec < 10 ? "0" + sec : sec));
     }
 
+    const updateCurrentTrack = async (index,id, name, artists, image, preview_url) => {
+        const currentPlaying = {
+            index: index,
+            id: id,
+            name: name,
+            artists: artists,
+            image: image,
+            preview_url: preview_url?preview_url:null
+        };
+        dispatch({ type: reducerCases.SET_PLAYLING, currentPlaying });
+        dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
+    }
 
     return (
         <Container headerBg={headerBg}>
@@ -91,11 +105,10 @@ export default function Body({ headerBg }) {
                                         image,
                                         duration,
                                         album,
-                                        context_uri,
-                                        track_number
+                                        preview_url
                                     }, index) => {
                                         return (
-                                            <div className="row" key={id} >
+                                            <div className="row" key={id} onClick={() => updateCurrentTrack(index,id, name, artists, image, preview_url)} >
                                                 <div className="col">
                                                     <span>{index + 1}</span>
                                                 </div>
@@ -163,7 +176,7 @@ const Container = styled.div`
         color: #b3b3b3;
         margin: 1rem 0 0 0;
         position: sticky;
-        top: 15vh;
+        top: 7rem;
         padding: 1rem 3rem;
         transition: 0.3s ease-in-out;
         border-bottom: 1px solid hsla(0,0%,100%,.1);
@@ -175,6 +188,7 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         margin-bottom: 5rem;
+        gap: 0.4rem;
         .row{
             padding: 0.5rem 1rem;
             display:grid;

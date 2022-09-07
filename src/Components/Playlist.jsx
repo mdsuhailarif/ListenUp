@@ -1,38 +1,56 @@
 import axios from 'axios';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { reducerCases } from '../Utils/Constants';
 import { useStateProvider } from '../Utils/StateProvider';
 
 
 export default function Playlist() {
 
-    const [{token, playlists }, dispatch]  =useStateProvider();
-
+    const [{ token, playlists}, dispatch] = useStateProvider();
     useEffect(() => {
         const getPlaylistData = async () => {
             const response = await axios.get(
                 'https://api.spotify.com/v1/me/playlists',
-            {
-                headers: {
-                    Authorization: "Bearer "+ token,
-                    "Content-Type": "application/json"
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                        "Content-Type": "application/json"
+                    }
                 }
-            }
             );
-            const {items} = response.data;
-            const playlists = items.map(({name,id}) => {
-                return{name,id};
+            const { items } = response.data;
+            const playlists = items.map(({ name, id }) => {
+                return { name, id };
             });
-            dispatch( {type: reducerCases.SET_PLAYLISTS, playlists} );
+            dispatch({ type: reducerCases.SET_PLAYLISTS, playlists });
         };
         getPlaylistData();
-    },[token,dispatch])
+    }, [token, dispatch])
 
-  return (
-    <div>
-        <ul>
-            { playlists.map(({name,id}) => <li key = {id}>{name}</li>) }
-        </ul>
-    </div>
-  )
+     const selectPlaylist = async(selectedPlaylistId) => {
+        dispatch({ type: reducerCases.SET_PLAYLISTID, selectedPlaylistId });
+    };
+
+    return (
+        <Container>
+            <ul>
+                {playlists.map(({ name, id }) => <li key={id}  onClick={ ()=> selectPlaylist(id) }>{name}</li>)}
+            </ul>
+        </Container>
+    )
 }
+
+const Container = styled.div`
+ul{
+    border-top: 1px solid;
+    border-color: #b3b3b3;
+    overflow: auto;
+    height:50vh;
+    &::-webkit-scrollbar{
+        &-thumb {
+            background-color:rgba(255,255,255,0.6);
+        }
+    }
+}
+`;

@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import React from 'react'
 import styled from 'styled-components';
 import { reducerCases } from '../Utils/Constants';
@@ -6,7 +6,7 @@ import { useStateProvider } from '../Utils/StateProvider';
 
 export default function VolumeControl() {
 
-    const [{token,alerts},dispatch] =useStateProvider();
+    const [{token},dispatch] =useStateProvider();
 
     const setVolume = async (e) => {
         await axios.put(
@@ -24,7 +24,7 @@ export default function VolumeControl() {
         .catch(function (error) {
             if (error.response) {
               const alerts= error.response.data.error.message;
-              dispatch({type: reducerCases.SET_ALERT, alerts});
+              dispatch({type: reducerCases.SET_ALERT, alerts });
             } 
           });
           

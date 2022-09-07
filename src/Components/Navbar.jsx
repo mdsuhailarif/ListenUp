@@ -3,15 +3,12 @@ import styled from 'styled-components';
 import {CgProfile} from 'react-icons/cg';
 import {FaSearch} from 'react-icons/fa';
 import { useStateProvider } from '../Utils/StateProvider';
-import Alertbox from './Alertbox';
 
 export default function Navbar({navBg}) {
 
     const [{userInfo}] = useStateProvider();
 
   return (
-    <div>
-    <Alertbox/>
     <Container navBg={navBg}>
         <div className="search_bar">
             <FaSearch/>
@@ -24,7 +21,6 @@ export default function Navbar({navBg}) {
             </a>
         </div>
     </Container>
-    </div>
   )
 }
 
@@ -33,7 +29,7 @@ display: flex;
 justify-content: space-between;
 align-items:center;
 padding: 2rem;
-height: 10vh;
+height: 5rem;
 position: sticky;
 top:0;
 transtion: 0.3 ease-in-out;

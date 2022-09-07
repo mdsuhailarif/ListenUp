@@ -13,21 +13,42 @@ export default function PlayerControl() {
     const [{ playerState, currentPlaying, selectedPlaylist }, dispatch] = useStateProvider();
     const ref = useRef();
     const changeTrack = async (type) => {
+
+        let ind = currentPlaying.index;
+        type === "next" ? ind++ : ind--;
+        
+        const item = selectedPlaylist.tracks[ind];
+        const currentplay = {
+            index: ind,
+            id: item.id,
+            name: item.name,
+            artists: item.artists,
+            image: item.image,
+            preview_url: item.preview_url ? item.preview_url : null
+        };
+        dispatch({ type: reducerCases.SET_PLAYLING, currentPlaying: currentplay });
+        dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
     };
 
     const changeState = () => {
-        if (playerState) {
-            ref.current.pause();
+        if (ref.current?.src) 
+        {
+            if (playerState) {
+                ref.current.pause();
+            }
+            else {
+                ref.current.play();
+            }
+            dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: !playerState });
+            dispatch({type: reducerCases.SET_ALERT, alerts: false });
         }
-        else {
-            ref.current.play();
-        }
-        dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: !playerState });
+        else
+        dispatch({type: reducerCases.SET_ALERT, alerts: "Preview Not Available" });
     }
 
     return (
         <Container>
-            {currentPlaying&&(<audio
+            {currentPlaying && (<audio
                 ref={ref}
                 src={currentPlaying.preview_url}
             />)}
