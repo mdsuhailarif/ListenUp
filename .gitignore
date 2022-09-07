@@ -7,7 +7,7 @@ node_modules
 .pnp.js
 
 #login
-\src\Components\Login.jsx
+/src/Components/Login.jsx
 
 # testing
 /coverage
