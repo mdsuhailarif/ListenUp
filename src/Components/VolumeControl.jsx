@@ -46,5 +46,7 @@ input{
     border-radius: 2rem;
     height: 0.4rem;
 }
-
+@media (max-width: 860px){
+    display: none;
+}
 `;

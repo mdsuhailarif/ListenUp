@@ -178,7 +178,7 @@ const Container = styled.div`
         color: #b3b3b3;
         margin: 1rem 0 0 0;
         position: sticky;
-        top: 7rem;
+        top: 6rem;
         padding: 1rem 3rem;
         transition: 0.3s ease-in-out;
         border-bottom: 1px solid hsla(0,0%,100%,.1);

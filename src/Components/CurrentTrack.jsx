@@ -82,4 +82,32 @@ const Container = styled.div`
             }
         }
 }
+@media (max-width: 860px){
+    .track{
+        width:53vw;
+        display: flex;
+        align-items: center;
+        gap:0.5rem;
+        img{
+            width: 6vh;
+            border-radius: 0.3rem;
+        }
+        .track_info{
+                display:flex;
+                flex-direction: column;
+                gap:5px;
+                overflow:hidden;
+                .name{
+                    white-space:nowrap;
+                    color: #dddcdc;
+                }
+                .artist{
+                    disply:block;
+                    white-space:nowrap;
+                    color:#b3b3b3;
+                    font-size: 0.8rem;
+                }
+            }
+    }
+}
 `;

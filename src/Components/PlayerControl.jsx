@@ -92,4 +92,11 @@ svg{
     font-size:2rem;
 }
 
+@media (max-width:860px){
+    gap:1rem;
+    .shuffle, .repeat{
+        display: none;
+    }
+}
+
 `;

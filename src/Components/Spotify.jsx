@@ -51,22 +51,21 @@ export default function Spotify() {
         <Container>
             <Alertbox/>
             <div className='spotify_body'>
-                <Sidebar/>
+                <div className="sidebar"><Sidebar/></div>
                 <div className="body" ref={bodyRef} onScroll={bodyScrolled}>
                     <Navbar navBg={navBg} />
                     <div className="body_contents">
-                        
                         <Routes>
                             <Route path='/body' element={<Body headerBg={headerBg} />}/>
                             <Route path='/' element={<Home/>}/>
                         </Routes>
-
                     </div>
                 </div>
             </div>
             <div className="spotify_footer">
                 <Footer/>
             </div>
+            <div className="sidebar"><Sidebar/></div>
         </Container>
     )
 }
@@ -83,7 +82,7 @@ grid-template-rows: 87vh 13vh;
     font-weight: 700;
     font-size: 0.875rem;
     display: grid;
-    grid-template-columns: 22vw 78vw;
+    grid-template-columns: 15vw 85vw;
     height: 100%;
     width:100%;
     background: linear-gradient(transparent,rgba(0,0,1));
@@ -105,4 +104,22 @@ grid-template-rows: 87vh 13vh;
           }
     }
 }
+
+@media (max-width: 860px) { 
+    display: grid;
+    grid-template-rows: 85vh 10vh 5vh;
+    .spotify_body{
+        display: grid;
+        grid-template-columns: 100vw;
+        .sidebar{
+            display:none;
+        }
+        .body{
+            &::-webkit-scrollbar{
+                display:none;
+            }
+        }
+    }
+}
+
 `;

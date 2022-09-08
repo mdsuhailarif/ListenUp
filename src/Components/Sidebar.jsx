@@ -39,9 +39,10 @@ export default function Sidebar() {
                         <span> Your Playlists</span>
                         </Link>
                     </li>
-                    <Playlist show={show} />
-                    {0?<Navbar focus={focus}/>:""}
                 </ul>
+                <div className="playlists">
+                <Playlist show={show} />
+                </div>
             </div>
         </Container>
     )
@@ -64,6 +65,7 @@ width: 100% ;
         text-align: center;
         margin: 1rem 0;
         img{
+            width:4rem;
             max-inline-size: 80%;
             block-size: auto;
         }
@@ -75,7 +77,7 @@ width: 100% ;
         gap: 1rem;
         padding: 1rem;
         max-height: 100%;
-        font-size: 2vw;
+        font-size: 1.3vw;
         li{
             padding: 0 0.3rem;
             diplay: flex;
@@ -87,5 +89,48 @@ width: 100% ;
             }
         }  
     }
+}
+@media (max-width: 860px){
+height: 100%;
+width: 100%;
+border-top: 1px solid #282828;
+align-items: center;
+justify-content: center;
+padding: 0 1rem;
+.top_links {
+    .logo{
+        display:none;
+    }
+    ul{
+        position: fixed;
+        bottom:-27px;
+        left: 50px;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 5fr;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0;
+        gap: 25vw;
+        font-size: 3.5vh;
+        li{
+            align-items: center;
+            justify-content: center;
+            padding: 0 0;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            span{
+                display:none;
+            }
+            svg{
+                position:;
+
+            }
+        }  
+    }
+    .playlists{
+        display: none;
+    }
+}
 }
 `;
