@@ -33,7 +33,6 @@ export default function CurrentTrack() {
         };
         getcurrentTrack();
     }, [token, dispatch])
-
     
     return (
         <Container>
@@ -45,7 +44,7 @@ export default function CurrentTrack() {
                         </div>
                         <div className="track_info">
                             <span className='name'>{currentPlaying.name}</span>
-                            <span className='artist'>{currentPlaying.artists.join(", ")}</span>
+                            <span className='artist'>{currentPlaying.artists}</span>
                         </div>
                     </div>
                 )

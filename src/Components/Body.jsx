@@ -52,11 +52,12 @@ export default function Body({ headerBg }) {
         return (min + ":" + (sec < 10 ? "0" + sec : sec));
     }
 
-    const updateCurrentTrack = async (index,id, name, artists, image, preview_url) => {
+    const updateCurrentTrack = async (id, name, artists, image, preview_url,index) => {
         const currentPlaying = {
+            index: index,
             id: id,
             name: name,
-            artists: artists,
+            artists: artists.join(", "),
             image: image,
             preview_url: preview_url?preview_url:null
         };
@@ -81,7 +82,7 @@ export default function Body({ headerBg }) {
                         </div>
                         <div className="list">
                             <div className="header_row">
-                                <div className="col">
+                                <div className="col index">
                                     <span>#</span>
                                 </div>
                                 <div className="col">
@@ -108,8 +109,8 @@ export default function Body({ headerBg }) {
                                         preview_url
                                     }, index) => {
                                         return (
-                                            <div className="row" key={id} onClick={() => updateCurrentTrack(id, name, artists, image, preview_url)} >
-                                                <div className="col">
+                                            <div className="row" key={id} onClick={() => updateCurrentTrack(id, name, artists, image, preview_url,index)} >
+                                                <div className="col index">
                                                     <span>{index + 1}</span>
                                                 </div>
                                                 <div className="col detail">
@@ -186,13 +187,13 @@ const Container = styled.div`
     }
     
     .tracks{
-        margin: 0.5rem 2rem;
+        margin: 0.5rem 1rem;
         display: flex;
         flex-direction: column;
         margin-bottom: 5rem;
         gap: 0.4rem;
         .row{
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 2rem;
             display:grid;
             grid-template-columns:0.3fr 3fr 2.1fr 0.5fr;
             gap:1rem;
@@ -238,4 +239,27 @@ const Container = styled.div`
         }
     }
 }
+
+@media (max-width:860px){
+    .list{
+        .header_row{
+            padding: 1rem 2rem;
+            grid-template-columns:3fr 2.1fr 0.5fr;
+            .index{
+                display: none;
+            }
+        }
+        .tracks{
+            .row{
+                padding: 0.5rem 1rem;
+                grid-template-columns: 3fr 2.1fr 0.5fr;
+                .index{
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
 `;

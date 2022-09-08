@@ -14,6 +14,10 @@ export default function Sidebar() {
     const showPlaylists = (display) => {
         display?setshow(true):setshow(false);
     };
+
+        const play = () => {
+            showPlaylists(true);
+        };
    
     return (
         <Container>
@@ -33,7 +37,7 @@ export default function Sidebar() {
                         <span> Search</span>
                         </Link>
                     </li>
-                    <li onClick={()=>showPlaylists(true)}>
+                    <li onClick={play}>
                         <Link to="/body" style={{ textDecoration: 'none' }}>
                         <IoLibrary/>
                         <span> Your Playlists</span>
@@ -103,7 +107,7 @@ padding: 0 1rem;
     }
     ul{
         position: fixed;
-        bottom:-27px;
+        bottom:-29px;
         left: 50px;
         list-style-type: none;
         display: grid;
@@ -121,10 +125,6 @@ padding: 0 1rem;
             transition: 0.3s ease-in-out;
             span{
                 display:none;
-            }
-            svg{
-                position:;
-
             }
         }  
     }
