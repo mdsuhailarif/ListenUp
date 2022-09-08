@@ -22,7 +22,6 @@ export default function CurrentTrack() {
             if (response.data !== "") {
                 const { item } = response.data;
                 const currentPlaying = {
-                    index: -1,
                     id: item.id,
                     name: item.name,
                     artists: item.artists.map((artist) => artist.name),
@@ -62,6 +61,10 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     gap:1rem;
+    img{
+        width: 4rem;
+        border-radius: 0.3rem;
+    }
     .track_info{
             display:flex;
             flex-direction: column;

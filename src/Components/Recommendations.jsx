@@ -27,9 +27,11 @@ export default function Recommendations() {
             const recomm = item.map(
                 ({ track}) =>
                 ({
+                    id: track.id,
                     name: track.name,
                     artists: track.artists.map((artist) => artist.name),
-                    images: track.album.images[0].url
+                    image: track.album.images[1].url,
+                    preview_url: track.preview_url?track.preview_url:null
                 })
             );
             dispatch({ type: reducerCases.SET_RECCOM, recomm });
@@ -39,15 +41,26 @@ export default function Recommendations() {
     
     }, [token, dispatch])
 
+    const updateCurrentTrack = async (id, name, artists, image, preview_url) => {
+        const currentPlaying = {
+            id: id,
+            name: name,
+            artists: artists,
+            image: image,
+            preview_url: preview_url?preview_url:null
+        };
+        dispatch({ type: reducerCases.SET_PLAYLING, currentPlaying });
+        dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
+    };
     
     return (
         <Container>
             <span>Recommendations</span>
             <ul>
                 {
-                    recomm&&(recomm.map(({ name, images,artists },id) =>
-                    <li key={id} >
-                        <img src={images} alt="playlist" />
+                    recomm&&(recomm.map(({ name, image,artists,id, preview_url },index) =>
+                    <li key={index} onClick={() => updateCurrentTrack(id, name, artists, image, preview_url)}>
+                        <img src={image} alt="playlist" />
                         <span className='name'>{name}</span>
                         <span className='artists'>{artists.join(", ")}</span>
                     </li>))
@@ -74,6 +87,7 @@ ul{
     &::-webkit-scrollbar{
         display:none;}
     li{
+        cursor: pointer;
         display:flex;
         flex-direction: column;
         color: white;

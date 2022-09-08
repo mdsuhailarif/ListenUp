@@ -5,7 +5,7 @@ import { reducerCases } from '../Utils/Constants';
 import { useStateProvider } from '../Utils/StateProvider';
 
 
-export default function Playlist() {
+export default function Playlist({show}) {
 
     const [{ token, playlists}, dispatch] = useStateProvider();
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function Playlist() {
     };
 
     return (
-        <Container>
+        <Container show={show}>
             <ul>
                 {playlists.map(({ name, id }) => <li key={id}  onClick={ ()=> selectPlaylist(id) }>{name}</li>)}
             </ul>
@@ -43,6 +43,7 @@ export default function Playlist() {
 
 const Container = styled.div`
 ul{
+    opacity: ${ ({show})=>show?"1":"0" };
     border-top: 1px solid;
     border-color: #b3b3b3;
     overflow: auto;

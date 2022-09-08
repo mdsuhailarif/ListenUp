@@ -4,16 +4,21 @@ import {CgProfile} from 'react-icons/cg';
 import {FaSearch} from 'react-icons/fa';
 import { useStateProvider } from '../Utils/StateProvider';
 
+const Search = () => {
+    return(
+        <div className="search_bar">
+        <FaSearch/>
+        <input type="text" placeholder='Artists, Songs, or podcasts'/>
+        </div>
+    )
+}
+
 export default function Navbar({navBg}) {
 
     const [{userInfo}] = useStateProvider();
-
   return (
     <Container navBg={navBg}>
-        <div className="search_bar">
-            <FaSearch/>
-            <input type="text" placeholder='Artists, Songs, or podcasts'/>
-        </div>
+        <Search/>
         <div className="avatar">
             <a href="/">
                 <CgProfile/>
@@ -27,9 +32,10 @@ export default function Navbar({navBg}) {
 const Container = styled.div`
 display: flex;
 justify-content: space-between;
-align-items:center;
-padding: 2rem;
-height: 5rem;
+align-items: center;
+padding: 1.8rem 1rem;
+padding-bottom: 1rem;
+height: 3.5rem;
 position: sticky;
 top:0;
 transtion: 0.3 ease-in-out;

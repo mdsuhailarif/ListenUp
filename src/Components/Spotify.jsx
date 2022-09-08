@@ -60,6 +60,7 @@ export default function Spotify() {
                             <Route path='/body' element={<Body headerBg={headerBg} />}/>
                             <Route path='/' element={<Home/>}/>
                         </Routes>
+
                     </div>
                 </div>
             </div>
@@ -76,13 +77,13 @@ maxheight: 100vh;
 overflow: hidden;
 font-weight:400;
 display: grid;
-grid-template-rows: 85vh 15vh;
+grid-template-rows: 87vh 13vh;
 .spotify_body {
     font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
     font-weight: 700;
     font-size: 0.875rem;
     display: grid;
-    grid-template-columns: 21vw 79vw;
+    grid-template-columns: 22vw 78vw;
     height: 100%;
     width:100%;
     background: linear-gradient(transparent,rgba(0,0,1));

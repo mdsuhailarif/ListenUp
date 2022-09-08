@@ -7,7 +7,7 @@ import { reducerCases } from '../Utils/Constants';
 
 
 export default function Body({ headerBg }) {
-
+    
     const [{ token, selectedPlaylist,selectedPlaylistId}, dispatch] = useStateProvider();
     useEffect(() => {
         const getInitialPlaylist = async () => {
@@ -54,7 +54,6 @@ export default function Body({ headerBg }) {
 
     const updateCurrentTrack = async (index,id, name, artists, image, preview_url) => {
         const currentPlaying = {
-            index: index,
             id: id,
             name: name,
             artists: artists,
@@ -63,7 +62,7 @@ export default function Body({ headerBg }) {
         };
         dispatch({ type: reducerCases.SET_PLAYLING, currentPlaying });
         dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: false });
-    }
+    };
 
     return (
         <Container headerBg={headerBg}>
@@ -109,7 +108,7 @@ export default function Body({ headerBg }) {
                                         preview_url
                                     }, index) => {
                                         return (
-                                            <div className="row" key={id} onClick={() => updateCurrentTrack(index,id, name, artists, image, preview_url)} >
+                                            <div className="row" key={id} onClick={() => updateCurrentTrack(id, name, artists, image, preview_url)} >
                                                 <div className="col">
                                                     <span>{index + 1}</span>
                                                 </div>

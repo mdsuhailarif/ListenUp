@@ -1,29 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { reducerCases } from '../Utils/Constants';
 import { useStateProvider } from '../Utils/StateProvider';
 import RecentlyPlayed from './RecentlyPlayed';
 import Recommendations from './Recommendations';
 
-
 export default function Home() {
 
-    const [{ playlists}] = useStateProvider();
+    const [{ playlists }, dispatch] = useStateProvider();
 
-  return (
-    <Container>
-        
-        <span>Your Playlists</span>
-        <ul>
-        {playlists.map(({ name,images, id}) => <li key={id} >
-            <img src={images[0].url} alt="playlist" />
-            <span>{name}</span>
-            </li>)
-        }
-        </ul>
-        <RecentlyPlayed/>
-        <Recommendations/>
-    </Container>
-  )
+    const selectPlaylist = async (selectedPlaylistId) => {
+        dispatch({ type: reducerCases.SET_PLAYLISTID, selectedPlaylistId });
+    };
+
+    return (
+        <Container>
+
+            <span>Your Playlists</span>
+            <ul>
+                {playlists.map(({ name, images, id }) =>
+                <Link key={id} to="/body" style={{ textDecoration: 'none' }}>
+                <li  onClick={() => selectPlaylist(id)}>
+                        <img src={images[0].url} alt="playlist" />
+                        <span>{name}</span>
+                    </li>
+                    </Link>)
+                }
+            </ul>
+            <RecentlyPlayed />
+            <Recommendations />
+        </Container>
+    )
 }
 
 const Container = styled.div`
