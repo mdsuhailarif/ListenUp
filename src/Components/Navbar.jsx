@@ -43,6 +43,7 @@ background:  ${ ({navBg})=>navBg?"linear-gradient(transparent,rgba(0,0,0,0.4))":
 background-color: ${ ({navBg})=>navBg?"rgba(32,87,100)":"none" };
 .search_bar{
     background-color:white;
+    min-width: 8rem;
     width: 25%;
     padding: 0.4rem;
     border-radius: 1.5rem;
@@ -51,7 +52,7 @@ background-color: ${ ({navBg})=>navBg?"rgba(32,87,100)":"none" };
     gap: 0.5rem;
     input{
         border: none;
-        height: 1.8rem;
+        height: 1.2rem;
         width: 100%;
         &:focus {
             outline:none;

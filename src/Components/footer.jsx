@@ -24,8 +24,10 @@ grid-template-columns: 1fr 2fr 1fr;
 align-items: center;
 justify-content: center;
 padding: 0 1rem;
+
 @media(max-width: 860px){
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 0.5rem 1rem;
 }
 `;

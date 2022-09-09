@@ -65,7 +65,7 @@ export default function Spotify() {
             <div className="spotify_footer">
                 <Footer/>
             </div>
-            <div className="sidebar"><Sidebar/></div>
+            <div className="sidebar2"><Sidebar/></div>
         </Container>
     )
 }
@@ -104,10 +104,13 @@ grid-template-rows: 87vh 13vh;
           }
     }
 }
+.sidebar2{
+    display:none;
+}
 
 @media (max-width: 860px) { 
     display: grid;
-    grid-template-rows: 85vh 10vh 5vh;
+    grid-template-rows: 85vh 9vh 6vh;
     .spotify_body{
         display: grid;
         grid-template-columns: 100vw;
@@ -120,6 +123,14 @@ grid-template-rows: 87vh 13vh;
             }
         }
     }
+    .sidebar2{
+        display:block;
+    }
+    
 }
+@media(max-width: 600px){
+    grid-template-rows: 79vh 9vh 6vh;
+}
+
 
 `;
