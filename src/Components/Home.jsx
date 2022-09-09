@@ -6,7 +6,7 @@ import { useStateProvider } from '../Utils/StateProvider';
 import RecentlyPlayed from './RecentlyPlayed';
 import Recommendations from './Recommendations';
 
-export default function Home() {
+export default function Home({playlist}) {
 
     const [{ playlists }, dispatch] = useStateProvider();
 
@@ -15,7 +15,7 @@ export default function Home() {
     };
 
     return (
-        <Container>
+        <Container >
 
             <span>Your Playlists</span>
             <ul>

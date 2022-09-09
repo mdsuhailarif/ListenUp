@@ -10,6 +10,7 @@ import axios from 'axios';
 import Alertbox from './Alertbox';
 import {Routes,Route} from 'react-router-dom';
 import Home from './Home';
+import Searchbar from './Searchbar';
 
 
 export default function Spotify() {
@@ -54,6 +55,9 @@ export default function Spotify() {
                 <div className="sidebar"><Sidebar/></div>
                 <div className="body" ref={bodyRef} onScroll={bodyScrolled}>
                     <Navbar navBg={navBg} />
+                    <Routes>
+                            <Route path='/search' element={<Searchbar/>}/>
+                        </Routes>
                     <div className="body_contents">
                         <Routes>
                             <Route path='/body' element={<Body headerBg={headerBg} />}/>

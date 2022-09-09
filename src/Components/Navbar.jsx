@@ -5,12 +5,11 @@ import { useStateProvider } from '../Utils/StateProvider';
 import Searchbar from './Searchbar';
 
 export default function Navbar({navBg}) {
-
     const [{userInfo}] = useStateProvider();
   return (
     <Container navBg={navBg}>
         <div className="image"><img src=".\listenup_black.png" alt="" /></div>
-        <Searchbar/>
+        <div className="search_bar"><Searchbar/></div>
         <div className="avatar">
             <a href="/">
                 <CgProfile/>
@@ -22,7 +21,7 @@ export default function Navbar({navBg}) {
 }
 
 const Container = styled.div`
-display: flex;
+display:flex;
 justify-content: space-between;
 align-items: center;
 padding: 1.8rem 1rem;
@@ -36,23 +35,11 @@ background-color: ${ ({navBg})=>navBg?"rgba(32,87,100)":"none" };
 .image{
     display: none;
 }
+
 .search_bar{
-    background-color:white;
+    display: flex;
     min-width: 8rem;
     width: 25vw;
-    padding: 0.4rem;
-    border-radius: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    input{
-        border: none;
-        height: 1.2rem;
-        width: 100%;
-        &:focus {
-            outline:none;
-        }
-    }
 }
 
 .avatar{
@@ -93,7 +80,8 @@ background-color: ${ ({navBg})=>navBg?"rgba(32,87,100)":"none" };
         }
     }
     .search_bar{
-        display: none;
+        display:none;
     }
+
 }
 `;

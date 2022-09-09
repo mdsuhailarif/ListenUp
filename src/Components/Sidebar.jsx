@@ -16,7 +16,6 @@ export default function Sidebar() {
         const play = () => {
             showPlaylists(true);
         };
-   
     return (
         <Container>
             <div className="top_links">

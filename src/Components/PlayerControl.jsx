@@ -94,6 +94,7 @@ svg{
 
 @media (max-width:860px){
     gap:1rem;
+    padding: 1rem;
     .shuffle, .repeat{
         display: none;
     }
