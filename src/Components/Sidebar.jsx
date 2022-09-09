@@ -4,12 +4,10 @@ import { IoLibrary } from 'react-icons/io5';
 import { MdHomeFilled, MdSearch } from 'react-icons/md';
 import Playlist from './Playlist';
 import {Link} from "react-router-dom";
-import Navbar from './Navbar';
 
 export default function Sidebar() {
     
     const [show,setshow]  = useState(false);
-    const [focus,setFocus]  = useState(false);
 
     const showPlaylists = (display) => {
         display?setshow(true):setshow(false);
@@ -23,7 +21,7 @@ export default function Sidebar() {
         <Container>
             <div className="top_links">
                 <div className="logo">
-                    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png" alt="spotify" />
+                    <img src=".\listenup_white.png" alt="spotify" />
                 </div>
                 <ul>
                     <li onClick={()=>showPlaylists(false)}>
@@ -32,7 +30,7 @@ export default function Sidebar() {
                         </Link>
                     </li>
                     <li >
-                        <Link to="" style={{ textDecoration: 'none' }}>
+                        <Link to="/search" style={{ textDecoration: 'none' }}>
                         <MdSearch/>
                         <span> Search</span>
                         </Link>
@@ -69,7 +67,7 @@ width: 100% ;
         text-align: center;
         margin: 1rem 0;
         img{
-            width:4rem;
+            width:15vw;
             max-inline-size: 80%;
             block-size: auto;
         }

@@ -20,7 +20,7 @@ export default function Spotify() {
     const [headerBg,setHeaderBg]  = useState(false);
 
     const bodyScrolled = () => {
-        bodyRef.current.scrollTop >= 30 ?
+        bodyRef.current.scrollTop >= 10?
         setNavBg(true):setNavBg(false);
         bodyRef.current.scrollTop >= 243 ?
         setHeaderBg(true):setHeaderBg(false);
