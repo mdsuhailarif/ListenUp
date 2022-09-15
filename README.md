@@ -1,6 +1,6 @@
 # ListenUp
 
-**It is music player web app developed using Reactjs and Spotify API**.
+**It is responsive music streaming web app developed using Reactjs and Spotify API**.
 
 
 This is the frontend repository
@@ -26,9 +26,9 @@ This is the frontend repository
 
 run <code>npm i</code> and <code>npm start</code> to see the ListenUp in action
 
-## Visit Online
+## Running Online
 
-Click on thev link below  to see the ListenUp in action
+Click on the link below  to see the ListenUp in action
 
 https://listenup.on.fleek.co/
 
