@@ -42,37 +42,37 @@ https://listenup.on.fleek.co/
 
 <p align="center"> 
 <h3>Login</h3>
-<img align="center" src="./screenshots/login.png" alt="home" width="78%"/>
-<img align="center"" src="./screenshots/login_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/login.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/login_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 <p align="center"> 
 <h3>Home</h3>
-<img align="center" src="./screenshots/home.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/home_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/home.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/home_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 <p align="center"> 
 <h3>Search</h3>
-<img align="center" src="./screenshots/search.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/search_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/search.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/search_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 <p align="center"> 
 <h3>Playlist</h3>
-<img align="center" src="./screenshots/playlist.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/playlist_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/playlist.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/playlist_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 <p align="center"> 
 <h3>Song Selected</h3>
-<img align="center" src="./screenshots/playlist_song.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/playlist_song_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/playlist_song.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/playlist_song_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 
 <p align="center"> 
 <h3>Playlist Scrolled</h3>
-<img align="center" src="./screenshots/playlist_scroll.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/playlist_scroll_mob.jpg" alt="home" width="19.4%"/>
+<img align="left" src="./screenshots/playlist_scroll.png" alt="home" width="78%"/>
+<img align="center" src="./screenshots/playlist_scroll_mob.jpg" alt="home" width="19.4%"/>
 </p>
