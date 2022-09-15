@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# ListenUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**It is music player web app developed using Reactjs and Spotify API**.
 
-## Available Scripts
 
-In the project directory, you can run:
+This is the frontend repository
 
-### `npm start`
+## Core packages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. React Hooks (useState, useEffect, useRef)
+2. React Router - Routing
+3. Styling - Styled Components
+5. Network calls - Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Login (using Spotify account)
+2. Accessing Playlists
+3. Accessing Recently Played Songs
+4. Accessing Reccomendations
+5. Play and Pause Songs (from playlists, recently played, reccomendations)
+6. Traverse Playlist using next and previous button
 
-### `npm run build`
+## Running locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+run <code>npm i</code> and <code>npm start</code> to see the ListenUp in action
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Visit Online
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Click on thev link below  to see the ListenUp in action
 
-### `npm run eject`
+https://listenup.on.fleek.co/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## UI
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<p align="center"> 
+<h3>Login</h3>
+<img align="center" src="./screenshots/login.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/login_mob.jpg" alt="home" width="19.4%"/>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p align="center"> 
+<h3>Home</h3>
+<img align="center" src="./screenshots/home.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/home_mob.jpg" alt="home" width="19.4%"/>
+</p>
 
-### Analyzing the Bundle Size
+<p align="center"> 
+<h3>Search</h3>
+<img align="center" src="./screenshots/search.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/search_mob.jpg" alt="home" width="19.4%"/>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="center"> 
+<h3>Playlist</h3>
+<img align="center" src="./screenshots/playlist.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/playlist_mob.jpg" alt="home" width="19.4%"/>
+</p>
 
-### Making a Progressive Web App
+<p align="center"> 
+<h3>Song Selected</h3>
+<img align="center" src="./screenshots/playlist_song.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/playlist_song_mob.jpg" alt="home" width="19.4%"/>
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center"> 
+<h3>Playlist Scrolled</h3>
+<img align="center" src="./screenshots/playlist_scroll.png" alt="home" width="78%"/>
+<img align="right"" src="./screenshots/playlist_scroll_mob.jpg" alt="home" width="19.4%"/>
+</p>
