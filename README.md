@@ -43,7 +43,7 @@ https://listenup.on.fleek.co/
 <p align="center"> 
 <h3>Login</h3>
 <img align="center" src="./screenshots/login.png" alt="home" width="78%"/>
-<img align="right"" src="./screenshots/login_mob.jpg" alt="home" width="19.4%"/>
+<img align="center"" src="./screenshots/login_mob.jpg" alt="home" width="19.4%"/>
 </p>
 
 <p align="center"> 
