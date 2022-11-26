@@ -15,7 +15,7 @@ export default function Home({playlist}) {
     };
 
     return (
-        <Container >
+        <Container>
 
             <span>Your Playlists</span>
             <ul>
@@ -46,12 +46,17 @@ span{
 ul{
     display:flex;
     gap:2rem;
+    overflow: auto;
+    &::-webkit-scrollbar{
+        display:none;}
     li{
+        cursor: pointer;
         display:flex;
         flex-direction: column;
         color: white;
+        height: 27vh;
+        width: 20vh;
         background-color: rgb(0,0,0, 0.4);
-        box-shadow: rgba(0,0,0,0.25) 0px 25px 50px 12px;
         border-radius: 0.5rem;
         img{
             height: 15vh;
